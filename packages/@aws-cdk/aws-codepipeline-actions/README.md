@@ -47,6 +47,7 @@ const sourceAction = new codepipeline_actions.GitHubSourceAction({
   oauthToken: token.value,
   outputArtifactName: 'SourceOutput', // this will be the name of the output artifact in the Pipeline
   branch: 'develop', // default: 'master'
+  trigger: codepipeline_actions.TriggerType.Poll // default: 'WebHook', 'None' is also possible for no Source trigger
 });
 pipeline.addStage({
   name: 'Source',
